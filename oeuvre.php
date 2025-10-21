@@ -6,6 +6,7 @@
     // Si l'URL ne contient pas d'id, on redirige sur la page d'accueil
     if(empty($_GET['id'])) {
         header('Location: index.php');
+        die;
     }
     $id = (int) $_GET['id'];
 
@@ -17,6 +18,7 @@
     // Si aucune oeuvre trouvé, on redirige vers la page d'accueil
     if(!$oeuvre) {
         header('Location: index.php');
+        die;
     }
 ?>
 
