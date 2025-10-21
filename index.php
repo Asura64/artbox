@@ -1,6 +1,11 @@
 <?php
+    require 'config.php';
+    require 'bdd.php';
     require 'header.php';
-    require 'oeuvres.php';
+
+    $connexion = connexion();
+    $requete = $connexion->query('SELECT id, titre, artiste, image FROM oeuvres');
+    $oeuvres = $requete->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div id="liste-oeuvres">
     <?php foreach($oeuvres as $oeuvre): ?>
